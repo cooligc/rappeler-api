@@ -1,0 +1,30 @@
+{
+  "name": "rappler-server",
+  "version": "0.0.1",
+  "description": "This is a reminder application",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cooligc/rappeler-api.git"
+  },
+  "keywords": [
+    "rappeler",
+    "mean"
+  ],
+  "author": "cooligc (contact@sitakant.info)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cooligc/rappeler-api/issues"
+  },
+  "homepage": "https://github.com/cooligc/rappeler-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.9",
+    "node-uuid": "^1.4.8"
+  }
+}
