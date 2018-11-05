@@ -9,27 +9,28 @@ var routes = function(user) {
         .post(userController.post)
         .get(userController.get);
 
-    userRouter.use('/:userId', function(req, res, next) {
-        console.log('Getting data for userid=' + req.params.userId);
-        user.findById(req.param.userId, function(err, user) {
+    userRouter.use('/:username', function(req, res, next) {
+    	username = req.params.username;
+        console.log('Getting data for username=' + username);
+        user.find({'username':username}, function(err, user) {
             if (err) {
                 console.log('Something went wrong');
                 console.log(err);
                 res.status(500).send(err);
             } else if (user) {
-                console.log('user = ' + JSON.stringfy(user));
+                console.log('user = ' + JSON.stringify(user));
                 req.user = user;
                 next();
             } else {
-                console.log('userId=' + req.param.userId + ' did not find in the database');
+                console.log('username=' + username + ' did not find in the database');
                 res.status(404).send('No User found');
             }
         })
     });
 
-    userRouter.route('/:userId')
+    userRouter.route('/:username')
         .get(function(req, res) {
-            res.json(req.book);
+            res.json(req.user);
         })
         .put(function(req, res) {
             req.user.firstName = req.body.firstName;

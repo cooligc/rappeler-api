@@ -10,18 +10,19 @@ var routes = function(reminder) {
         .get(reminderController.get);
 
     reminderRouter.use('/:id', function(req, res, next) {
-        console.log('Getting data for reminder id=' + req.params.id);
-        reminder.findById(req.param.id, function(err, reminder) {
+        reminderId = req.params.id;
+        console.log('Getting data for reminder id=' + reminderId);
+        reminder.findById(reminderId, function(err, reminder) {
             if (err) {
                 console.log('Something went wrong');
                 console.log(err);
                 res.status(500).send(err);
             } else if (reminder) {
-                console.log('reminder = ' + JSON.stringfy(reminder));
+                console.log('reminder = ' + JSON.stringify(reminder));
                 req.reminder = reminder;
                 next();
             } else {
-                console.log('Reminder Id=' + req.param.id + ' did not find in the database');
+                console.log('Reminder Id=' + reminderId + ' did not find in the database');
                 res.status(404).send('No Reminder found');
             }
         })

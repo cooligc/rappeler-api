@@ -27,7 +27,7 @@ var reminder = new schema({
         type: String
     },
     isRepeated: {
-        type: Boolean;
+        type: Boolean
     }
 });
 

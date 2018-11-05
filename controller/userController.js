@@ -25,6 +25,7 @@ var userController = function(user) {
         if (req.query.username) {
             query.username = req.query.username;
         }
+        console.log('Query '+ JSON.stringify(query));
         user.find(query, function(err, users) {
             if (err) {
                 console.log(err);

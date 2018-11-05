@@ -24,6 +24,9 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "gulp": "^3.9.1",
+    "gulp-env": "^0.4.0",
+    "gulp-nodemon": "^2.4.1",
     "mongoose": "^5.3.9",
     "node-uuid": "^1.4.8"
   }

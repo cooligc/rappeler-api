@@ -4,11 +4,14 @@ var express = require('express'),
 
 var port = process.env.PORT || 3000;
 
-if(process.env.ENV == 'Test'){
-    db = mongoose.connect('mongodb://localhost:27017/books-test');
+var mongo_url = process.env.DB || 'mongodb://localhost:27017/rappeler'
+
+/*if(process.env.ENV == 'Test'){
+    db = mongoose.connect();
 }else{
-    db = mongoose.connect('mongodb://admin:admin123@ds151453.mlab.com:51453/rappeler');
-}
+    db = mongoose.connect();
+}*/ 
+db = mongoose.connect(mongo_url);
 
 var app = express();
 app.use(bodyParser.urlencoded({extended:true}));
