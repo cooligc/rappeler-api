@@ -37,6 +37,7 @@ var userController = function(user) {
                     var newUser = element.toJSON();
                     newUser.links = {};
                     newUser.links.self = 'http://' + req.headers.host + '/api/users/' + newUser.username;
+                    newUser.links.reminders = 'http://' + req.headers.host + '/api/reminders?username=' + newUser.username;
                     returnUsers.push(newUser);
                 })
                 res.json(returnUsers)

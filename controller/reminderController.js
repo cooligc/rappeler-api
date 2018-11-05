@@ -25,6 +25,7 @@ var reminderController = function(reminder) {
         if (req.query.username) {
             query.username = req.query.username;
         }
+        console.log('Query '+ JSON.stringify(query));
         reminder.find(query, function(err, reminders) {
             if (err) {
                 console.log(err);
@@ -36,6 +37,7 @@ var reminderController = function(reminder) {
                     var newReminder = element.toJSON();
                     newReminder.links = {};
                     newReminder.links.self = 'http://' + req.headers.host + '/api/reminders/' + newReminder._id;
+                    newReminder.links.user = 'http://' + req.headers.host + '/api/users/' + newReminder.username;
                     allReminders.push(newReminder);
                 })
                 res.json(allReminders)
