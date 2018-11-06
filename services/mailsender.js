@@ -16,5 +16,7 @@ var smtpTransport = nodemailer.createTransport({
 
 
 sendMail = function(reciever, type){
-
+	console.log('Sending mail');
 }
+
+module.exports = sendMail;

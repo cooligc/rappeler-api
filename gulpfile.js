@@ -8,7 +8,8 @@ gulp.task('default',function(){
         ext: 'js',
         env:{
             PORT: 8000,
-            DB: 'mongodb://admin:admin123@ds151453.mlab.com:51453/rappeler'
+            DB: 'mongodb://admin:admin123@ds151453.mlab.com:51453/rappeler',
+            CLOUDAMQP_URL: 'amqp://acahnwtj:uBFYdqU9jWinUF41upLBa7w8Yg51tTYB@mustang.rmq.cloudamqp.com/acahnwtj'
         },
         ignore: ['./node_modules/**']
     })
